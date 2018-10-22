@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:sqlserver://localhost:1433;database=AntExpress</property>
+        <property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+        <mapping class="com.sweet.pojo.AdministratorEntity"/>
+        <mapping class="com.sweet.pojo.ApplyFormEntity"/>
+        <mapping class="com.sweet.pojo.CustomerEntity"/>
+        <mapping class="com.sweet.pojo.DepartmentEntity"/>
+        <mapping class="com.sweet.pojo.EmployeeEntity"/>
+        <mapping class="com.sweet.pojo.InformEntity"/>
+        <mapping class="com.sweet.pojo.JobEntity"/>
+        <mapping class="com.sweet.pojo.SendFormEntity"/>
+        <mapping class="com.sweet.pojo.WorkFormEntity"/>
+        <mapping resource="com/sweet/pojo/AdministratorEntity.hbm.xml"/>
+        <mapping resource="com/sweet/pojo/ApplyFormEntity.hbm.xml"/>
+        <mapping resource="com/sweet/pojo/CustomerEntity.hbm.xml"/>
+        <mapping resource="com/sweet/pojo/DepartmentEntity.hbm.xml"/>
+        <mapping resource="com/sweet/pojo/EmployeeEntity.hbm.xml"/>
+        <mapping resource="com/sweet/pojo/InformEntity.hbm.xml"/>
+        <mapping resource="com/sweet/pojo/JobEntity.hbm.xml"/>
+        <mapping resource="com/sweet/pojo/SendFormEntity.hbm.xml"/>
+        <mapping resource="com/sweet/pojo/WorkFormEntity.hbm.xml"/>
+        <!-- <property name="connection.username"/> -->
+        <!-- <property name="connection.password"/> -->
+
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>

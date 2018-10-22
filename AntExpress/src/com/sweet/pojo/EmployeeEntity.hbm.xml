@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.sweet.pojo.EmployeeEntity" table="Employee" schema="dbo" catalog="AntExpress">
+        <id name="empLogin">
+            <column name="EmpLogin" sql-type="varchar(16)" length="16"/>
+        </id>
+        <property name="empName">
+            <column name="EmpName" sql-type="nvarchar(16)" length="16" not-null="true"/>
+        </property>
+        <property name="empPwd">
+            <column name="EmpPwd" sql-type="varchar(32)" length="32" not-null="true"/>
+        </property>
+        <property name="empGender">
+            <column name="EmpGender" sql-type="char(1)" length="1" not-null="true"/>
+        </property>
+        <property name="job">
+            <column name="Job" sql-type="nvarchar(16)" length="16" not-null="true"/>
+        </property>
+        <property name="department">
+            <column name="Department" sql-type="nvarchar(16)" length="16" not-null="true"/>
+        </property>
+        <property name="tel">
+            <column name="Tel" sql-type="varchar(11)" length="11" not-null="true"/>
+        </property>
+        <property name="email">
+            <column name="Email" sql-type="varchar(32)" length="32" not-null="true"/>
+        </property>
+        <property name="salary">
+            <column name="Salary" sql-type="money" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
