@@ -13,7 +13,7 @@ public class UserController {
     private UserService service;
 
     @RequestMapping("/find/{id}")
-    public String findUser(@PathVariable int id){
+    public String findUser(@PathVariable String id){
         return service.getUser(id).toString();
     }
 

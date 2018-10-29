@@ -11,7 +11,7 @@ public class UserService {
     @Autowired
     UserMapper userMapper;
 
-    public User getUser(int id){
+    public User getUser(String id){
         return userMapper.selectUser(id);
     }
 }

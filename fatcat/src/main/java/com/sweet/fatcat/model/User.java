@@ -1,14 +1,13 @@
 package com.sweet.fatcat.model;
 
 public class User {
-    private Integer id;
+    private String id;
     private String password;
-    private String name;
 
-    public User(Integer id, String password, String name) {
+
+    public User(String id, String password) {
         this.id = id;
         this.password = password;
-        this.name = name;
     }
 
     @Override
@@ -16,15 +15,15 @@ public class User {
         return "User{" +
                 "id=" + id +
                 ", password='" + password + '\'' +
-                ", name='" + name + '\'' +
+                ", name='"  + '\'' +
                 '}';
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -36,11 +35,5 @@ public class User {
         this.password = password;
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 }

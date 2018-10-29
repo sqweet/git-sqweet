@@ -7,5 +7,5 @@ import com.sweet.fatcat.model.User;
 @Repository
 public interface UserMapper {
     @Select("SELECT * FROM User WHERE id = #{id}")
-    User selectUser(int id);
+    User selectUser(String id);
 }
