@@ -4,7 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@MapperScan("com.sweet.mapper")
+@MapperScan("com.sweet.fatcat.mapper")
 @SpringBootApplication
 public class FatcatApplication {
 

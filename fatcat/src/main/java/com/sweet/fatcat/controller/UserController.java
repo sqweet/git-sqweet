@@ -2,23 +2,22 @@ package com.sweet.fatcat.controller;
 
 import com.sweet.fatcat.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 public class UserController {
 
     @Autowired
-    private UserService service;
+    private UserService userService;
 
-    @RequestMapping("/find/{id}")
-    public String findUser(@PathVariable String id){
-        return service.getUser(id).toString();
+    @RequestMapping(value = "login")
+    public String toLogin(){
+        return "login";
     }
 
-    @RequestMapping("/hello")
-    public String hello(){
-        return "hello";
+    @RequestMapping(value = "login/validate")
+    public String validate(){
+        return null;
     }
 }
