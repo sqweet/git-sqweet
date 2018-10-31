@@ -14,4 +14,13 @@ public class UserService {
     public User getUser(String id){
         return userMapper.selectUser(id);
     }
+
+    public User validate(User inputUser){
+        User getUser = userMapper.selectUser(inputUser.getId());
+        if(getUser.getPassword().equals(inputUser.getPassword())){
+            return getUser;
+        }else {
+            return null;
+        }
+    }
 }

@@ -14,9 +14,9 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", password='" + password + '\'' +
-                ", name='"  + '\'' +
-                '}';
+                ", password='" + password + '\''
+
+                ;
     }
 
     public String getId() {

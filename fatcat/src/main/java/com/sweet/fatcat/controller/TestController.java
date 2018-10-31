@@ -1,24 +1,18 @@
-package com.sweet.controller;
+package com.sweet.fatcat.controller;
 
-import com.sweet.service.UserService;
+import com.sweet.fatcat.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class UserController {
-
+public class TestController {
     @Autowired
-    private UserService service;
+    UserService service;
 
-    @RequestMapping("/find/{id}")
-    public String findUser(@PathVariable int id){
+    @RequestMapping(value = "find/{id}")
+    public String find(@PathVariable String id){
         return service.getUser(id).toString();
-    }
-
-    @RequestMapping("/hello")
-    public String hello(){
-        return "hello";
     }
 }
