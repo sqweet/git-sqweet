@@ -23,4 +23,15 @@ public class UserService {
             return null;
         }
     }
+
+    public boolean register(User user){
+        User check = userMapper.selectUser(user.getId());
+        if(check!=null){
+            return false;
+        }else{
+            userMapper.insertUser(user);
+            return true;
+
+        }
+    }
 }
