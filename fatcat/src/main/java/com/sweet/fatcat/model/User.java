@@ -13,10 +13,9 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
-                ", password='" + password + '\''
-
-                ;
+                "id='" + id + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 
     public String getId() {

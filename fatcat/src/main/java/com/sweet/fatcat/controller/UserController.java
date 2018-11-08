@@ -1,6 +1,4 @@
 package com.sweet.fatcat.controller;
-
-import com.sweet.fatcat.model.Attention;
 import com.sweet.fatcat.model.User;
 import com.sweet.fatcat.service.AttentionService;
 import com.sweet.fatcat.service.UserService;
@@ -34,6 +32,8 @@ public class UserController {
         if(validateUser!=null){
             httpServletRequest.getSession().setAttribute("isLogin",true);
             httpServletRequest.getSession().setAttribute("user",validateUser);
+            System.out.println("login succeed");
+            System.out.println("user id"+httpServletRequest.getSession().getAttribute("user"));
             return "hello";
         }else {
             return "密码错误";
@@ -53,10 +53,12 @@ public class UserController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "news/attention")
+    @RequestMapping(value = "news/attention",method = RequestMethod.POST)
     public String attention(int newsId){
-        User loginedUser = (User) httpServletRequest.getAttribute("user");
-        if(attentionService.addAttention(loginedUser.getId(),newsId)){
+        User loginedUser = (User) httpServletRequest.getSession().getAttribute("user");
+        System.out.println(newsId);
+        boolean flag = attentionService.addAttention("sweet",newsId);
+        if(flag){
             return "success";
         }else{
             return "fail";
