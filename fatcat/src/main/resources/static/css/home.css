@@ -26,3 +26,13 @@
     height:240px;
     border:1px black solid;
 }
+#left{
+    margin-top:24%;
+    position:absolute;
+    left:0
+}
+#right{
+    margin-top:24%;
+    position:absolute;
+    right:0
+}
