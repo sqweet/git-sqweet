@@ -27,12 +27,21 @@
     border:1px black solid;
 }
 #left{
-    margin-top:24%;
+    margin-top:20%;
     position:absolute;
     left:0
 }
 #right{
-    margin-top:24%;
+    margin-top:20%;
     position:absolute;
     right:0
+}
+#left:hover{
+    cursor:pointer;
+}
+#right:hover{
+    cursor:pointer;
+}
+.item{
+    opacity: 0.5;
 }
