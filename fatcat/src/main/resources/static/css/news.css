@@ -1,0 +1,12 @@
+#body{
+    height:900px;
+}
+#newsPic{
+    margin-top:10%;
+    height:350px;
+    background:url("../img/news1.jpeg") no-repeat;
+    background-size: contain;
+}
+#newsContent{
+    margin-top:10%;
+}

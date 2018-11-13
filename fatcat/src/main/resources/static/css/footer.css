@@ -1,0 +1,28 @@
+#footer{
+    margin-top:0;
+    height:220px;
+    border:1px black solid;
+}
+#title{
+    border:1px solid black;
+    height:100%;
+    text-align:center;
+    padding:60px;
+    font-size:35px;
+    color:white;
+}
+#contact{
+    border:1px solid black;
+}
+#aboutus{
+    border:1px solid black;
+    height:85%;
+    background:#333;
+}
+#copyright{
+    border:1px solid black;
+    height:15%;
+    background:#333;
+    color:white;
+    text-align:center;
+}
