@@ -9,8 +9,7 @@ public class AttentionService {
     @Autowired
     private AttentionMapper attentionMapper;
 
-
-    public boolean addAttention(String userId,Integer newsId){
+    public boolean addAttention(String userId,int newsId){
         attentionMapper.insertAttention(userId, newsId);
         return true;
     }

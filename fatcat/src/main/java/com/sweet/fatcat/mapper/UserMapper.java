@@ -12,6 +12,4 @@ public interface UserMapper {
 
     @Insert("INSERT INTO User(id,password) VALUES (#{id},#{password})")
     void insertUser(User user);
-
-
 }

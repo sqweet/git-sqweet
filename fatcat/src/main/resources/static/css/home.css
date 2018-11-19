@@ -1,38 +1,47 @@
-#header{
-    height:100px;
-    border:1px black solid;
-}
-#logo{
-    height:50px;
-    border:1px black solid;
-}
-#index{
-    height:50px;
-    border:1px black solid;
+
+#body{
+    background:rgba(220,220,220,1)
 }
 #body{
-    height:1100px;
+    height:1300px;
     border:1px black solid;
 }
 #news{
     height:500px;
     border:1px black solid;
 }
+/*板块之间的间隔*/
+.blank{
+    height:35px;
+}
 .list{
-    height:200px;
+    height:300px;
     border:1px black solid;
 }
-#footer{
-    height:240px;
-    border:1px black solid;
+#list1{
+    background: url("../img/demo1.jpg");
+    background-size: cover;
 }
+#list2{
+    background: url("../img/demo2.jpg");
+    background-size: cover;
+}
+#list3{
+    background: url("../img/demo3.jpg");
+    background-size: cover;
+}
+#list4{
+    background: url("../img/demo4.jpg");
+    background-size: cover;
+}
+
 #left{
-    margin-top:20%;
+    margin-top:15%;
     position:absolute;
     left:0
 }
 #right{
-    margin-top:20%;
+    margin-top:15%;
     position:absolute;
     right:0
 }
@@ -45,3 +54,7 @@
 .item{
     opacity: 0.5;
 }
+
+
+
+
