@@ -1,0 +1,58 @@
+#header{
+    height:65px;
+    background:#333 ;
+}
+#logo{
+    height:100%;
+    border:1px black solid;
+}
+#index{
+    height:100%;
+}
+ul{
+    display:inline-block;
+    height:100%;
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    background:#333;
+}
+#navigation li{
+    display:inline-block;
+    height:100%;
+    float:left;
+}
+#loginForm li{
+    display:inline-block;
+    height:100%;
+    float:right;
+}
+li a{
+    display:block;
+    height:100%;
+    color:white;
+    padding:20px 24px;
+    font-size:18px;
+    text-align:center;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: #111;
+    text-decoration: none;
+    color:white;
+}
+#loginForm{
+    display:inline-block;
+    height:100%;
+}
+.logBtn{
+    height:100%;
+    background:#333;
+    color:white;
+    text-align:center;
+    font-size:18px;
+    border:0;
+}
+.logBtn:hover{
+    background-color: #111;
+}

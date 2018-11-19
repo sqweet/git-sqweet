@@ -25,6 +25,12 @@ public class UserController {
         return "login";
     }
 
+    @RequestMapping(value="news")
+    public String toNews(){ return "news";}
+
+    @RequestMapping(value="register")
+    public String toRegister(){ return "register";}
+
     @ResponseBody
     @RequestMapping(value = "login/validate",method = RequestMethod.POST)
     public String validate(User user){

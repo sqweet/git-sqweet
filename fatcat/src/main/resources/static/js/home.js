@@ -5,6 +5,7 @@ $(document).ready(function(){
     $("#right").hide();
     var news=document.getElementById("news");
     news.style.background="url('img/1.jpeg')";
+    news.style.backgroundSize="cover";
     var autoPlayer=setInterval(nextNews,3500);//自动播放
 
     $("#news").hover(function(){
@@ -24,6 +25,7 @@ function lastNews(){//上一条
     if(i<0)
         i=4;
     news.style.background="url("+images[i]+")";
+    news.style.backgroundSize="cover";
 }
 function nextNews(){//下一条
     var news=document.getElementById("news");
@@ -31,4 +33,5 @@ function nextNews(){//下一条
     if(i>4)
         i=0;
     news.style.background="url("+images[i]+")";
+    news.style.backgroundSize="cover";
 }
