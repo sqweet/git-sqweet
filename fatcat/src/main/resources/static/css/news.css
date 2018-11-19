@@ -1,12 +1,54 @@
 #body{
-    height:900px;
+    height:2000px;
 }
-#newsPic{
-    margin-top:10%;
+#newsPic1{
+    margin-top:5%;
     height:350px;
-    background:url("../img/news1.jpeg") no-repeat;
+    width:500px;
+    background:url("../img/news1.1.jpeg") no-repeat;
     background-size: contain;
 }
-#newsContent{
+#newsPic2{
     margin-top:10%;
+    height:350px;
+    width:500px;
+    background:url("../img/news1.2.jpeg") no-repeat;
+    background-size: contain;
+}
+#newsPic3{
+    margin-top:10%;
+    height:350px;
+    width:500px;
+    background:url("../img/news1.3.jpeg") no-repeat;
+    background-size: contain;
+}
+#content1{
+    height:350px;
+    margin-top:5%;
+    font-size:21px;
+}
+#content2,#content3{
+    height:350px;
+    margin-top:10%;
+    font-size:21px;
+}
+#blank{
+    height:40px;
+}
+#clickLike{
+    margin-top:15%;
+}
+#like{
+    border:0;
+    background: transparent;
+    heigth:40px;
+    width:40px;
+}
+#save{
+    border:0;
+    background: transparent;
+}
+img{
+    height:40px;
+    width:40px;
 }

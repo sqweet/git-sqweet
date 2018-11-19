@@ -28,17 +28,36 @@
 </div>
 
 <div id="body">
-    <div id="newsPic" class="col-md-5 col-md-offset-1"></div>
-    <div id="newsContent" class="col-md-3 col-md-offset-1">
+    <div id="blank" class="col-md-12"></div>
+    <div id="newsTitle" class="col-md-offset-2">
+        <h1>日本海岸再现大量“幽灵船” 仅11月就漂来33艘</h1>
+    </div>
+    <div id="newsPic1" class="col-md-5 col-md-offset-1"></div>
+    <div id="content1" class="col-md-4 col-md-offset-1">
         据悉，每年日本沿海地区都会出现数十艘“幽灵船”。这些船上通常没有任何人、或是仅仅搭载着尸体甚至白骨。
         今年漂到日本海岸的“幽灵船”已经达到了95艘，仅11月就多达33艘，一些船上还载有已变成白骨的尸体。
         日本海上保安厅统计的结果显示，仅11月一个月就已发现了33艘相关船只，比10月份多出不少，这也与秋冬季日本海上风浪大有关。漂过来的多是些木制的渔船，除了尸体，一些船只上还留有小锅、勺子、渔具等物品。
         自入秋以来，这些“幽灵船”多集中出现在北海道附近，当局也已加强警戒。
-        日本近年接连出现“幽灵船”抵岸的情况，2017年“幽灵船”事件达到104起，是2013年开始统计以来最多的一年。此前的最高纪录是在2013年，当年共发现80艘相关船只。
     </div>
-    <div id="clickLike" class="col-md-offset-4 col-md-8" >
-        <button>点赞</button>
-        <button>收藏</button>
+
+    <div id="newsPic2" class="col-md-5 col-md-offset-1"></div>
+    <div id="content2" class="col-md-4 col-md-offset-1">
+        日本近年接连出现“幽灵船”抵岸的情况，2017年“幽灵船”事件达到104起，是2013年开始统计以来最多的一年。此前的最高纪录是在2013年，当年共发现80艘相关船只。
+        日本海上保安厅12日发布消息称，今年漂到日本海岸的“幽灵船”已经达到了95艘，仅11月就多达33艘，一些船上还载有已变成白骨的尸体。
+        综合美联社、日本《朝日新闻》等媒体报道，每年日本沿海地区都会出现数十艘“幽灵船”。这些船上通常没有任何人、或是仅仅搭载着尸体甚至白骨。
+    </div>
+
+    <div id="newsPic3" class="col-md-5 col-md-offset-1"></div>
+    <div id="content3" class="col-md-4 col-md-offset-1">
+        然而，截止12日，今年漂至日本海岸的破旧船只已经多达95艘，以这一速度来看极有可能超过2017年创纪录的104艘。目前，在这些“幽灵船”上已经发现了12具尸体。
+        日本海上保安厅统计的结果显示，仅11月一个月就已发现了33艘相关船只，比10月份多出不少，这也与秋冬季日本海上风浪大有关。漂过来的多是些木制的渔船，
+        除了尸体，一些船只上还留有小锅、勺子、渔具等物品。自入秋以来，这些“幽灵船”多集中出现在北海道附近，当局也已加强警戒。
+        据海外网早前报道，日本近年接连出现“幽灵船”抵岸的情况，2017年“幽灵船”事件达到104起，是2013年开始统计以来最多的一年。此前的最高纪录是在2013年，当年共发现80艘相关船只。
+    </div>
+
+    <div id="clickLike" class="col-md-offset-5 col-md-6" >
+        <button id="like" v-on:mouseover="hover" v-on:mouseleave="hover"><img v-bind:src="img" ></button>
+        <button id="save" v-on:mouseover="hover1" v-on:mouseleave="hover1"><img v-bind:src="img1"></button>
     </div>
 </div>
 <div id="footer">
@@ -50,5 +69,7 @@
     </div>
     <div id="copyright">版权所有阿喵小分队</div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/news.js"></script>
 </body>
 </html>
