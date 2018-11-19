@@ -1,4 +1,6 @@
 package com.sweet.fatcat.controller;
+
+import com.sweet.fatcat.model.Attention;
 import com.sweet.fatcat.model.User;
 import com.sweet.fatcat.service.AttentionService;
 import com.sweet.fatcat.service.UserService;
@@ -25,6 +27,12 @@ public class UserController {
         return "login";
     }
 
+    @RequestMapping(value="news")
+    public String toNews(){ return "news";}
+
+    @RequestMapping(value="register")
+    public String toRegister(){ return "register";}
+
     @ResponseBody
     @RequestMapping(value = "login/validate",method = RequestMethod.POST)
     public String validate(User user){
@@ -32,8 +40,6 @@ public class UserController {
         if(validateUser!=null){
             httpServletRequest.getSession().setAttribute("isLogin",true);
             httpServletRequest.getSession().setAttribute("user",validateUser);
-            System.out.println("login succeed");
-            System.out.println("user id"+httpServletRequest.getSession().getAttribute("user"));
             return "hello";
         }else {
             return "密码错误";
@@ -53,12 +59,10 @@ public class UserController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "news/attention",method = RequestMethod.POST)
+    @RequestMapping(value = "news/attention")
     public String attention(int newsId){
-        User loginedUser = (User) httpServletRequest.getSession().getAttribute("user");
-        System.out.println(newsId);
-        boolean flag = attentionService.addAttention("sweet",newsId);
-        if(flag){
+        User loginedUser = (User) httpServletRequest.getAttribute("user");
+        if(attentionService.addAttention(loginedUser.getId(),newsId)){
             return "success";
         }else{
             return "fail";
