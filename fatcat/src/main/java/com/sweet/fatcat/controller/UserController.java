@@ -48,13 +48,13 @@ public class UserController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "register/regist",method = RequestMethod.POST)
+    @RequestMapping(value = "login/regist",method = RequestMethod.POST)
     public String register(User user){
         boolean flag = userService.register(user);
         if(flag){
-            return "succeed";
+            return "注册成功";
         }else {
-            return "failed";
+            return "用户名已被占用";
         }
     }
 
