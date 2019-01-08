@@ -1,3 +1,20 @@
+$(document).ready(function() {
+    alert("hello");
+    $.ajax({
+        url:'news',
+        type:'POST',
+        data:{id:2},
+        success:function(data){
+            alert(data.content1);
+        },
+        error:function (jqXHR) {
+            alert("error！"+JSON.stringify(jqXHR));
+            console.log(JSON.stringify(jqXHR));
+        }
+
+    })
+})
+
 var status=false;
 var app=new Vue({
     el: '#clickLike',
