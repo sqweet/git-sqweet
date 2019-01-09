@@ -18,6 +18,44 @@ $(document).ready(function(){
         autoPlayer=setInterval(nextNews,3500);//离开时恢复自动播放
     })
 
+    var id = 1;
+    $("#title1").click(function () {id=1;})
+    $("#title2").click(function () {id=2;})
+    $("#title3").click(function () {id=3})
+    $("#title4").click(function () {id=4})
+
+    $.ajax({
+        url:'/getTitles',
+        type:'POST',
+        success:function(data){
+            $("#title1").text(data[0]);
+            $("#title2").text(data[1]);
+            $("#title3").text(data[2]);
+            $("#title4").text(data[3]);
+        },
+        error:function (jqXHR) {
+            alert("error！"+JSON.stringify(jqXHR));
+            console.log(JSON.stringify(jqXHR));
+        }
+
+    })
+
+    $(".titles").click(function () {
+        $.ajax({
+            url:'/newsId',
+            type:'POST',
+            data:{receivedNewsId:id},
+            success(){
+
+            },
+            error:function (jqXHR) {
+                // alert("error！"+JSON.stringify(jqXHR));
+                // console.log(JSON.stringify(jqXHR));
+    }
+
+        })
+    })
+
 })
 function lastNews(){//上一条
     var news=document.getElementById("news");

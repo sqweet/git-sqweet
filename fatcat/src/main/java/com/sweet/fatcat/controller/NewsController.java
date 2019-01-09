@@ -16,15 +16,26 @@ public class NewsController {
 
     @Autowired
     private NewsService newsService;
+    private int newsId = 1;
+
+    @RequestMapping(value = "/newsId",method = RequestMethod.POST)
+    public String setNews(int receivedNewsId){
+        newsId = receivedNewsId;
+        return "news";
+    }
 
     @ResponseBody
     @RequestMapping(value = "/news",method = RequestMethod.POST)
-    public Map<String, Object> getNews(int id){
-        News news = newsService.getNewsById(id);
+    public Map<String, Object> getNews(){
+        News news = newsService.getNewsById(newsId);
         Map<String,Object> map = new HashMap<String,Object>();
+        map.put("title",news.getTitle());
         map.put("content1",news.getContent1());
+        map.put("img1",news.getImg1());
         map.put("content2",news.getContent2());
+        map.put("img2",news.getImg2());
         map.put("content3",news.getContent3());
+        map.put("img3",news.getImg3());
         return map;
     }
 }

@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface NewsMapper {
     @Select("SELECT * FROM News WHERE id = #{id}")
@@ -13,4 +15,7 @@ public interface NewsMapper {
     @Insert("INSERT INTO News(title,content1,img1,content2,img2,content3,img3,reporter,count,type) VALUES " +
             "(#{id},#{content1},#{img1},#{content2}),#{img2},#{content3},#{img3},#{reporter},#{count},#{type}")
     void insert(News insertNews);
+
+    @Select("SELECT title FROM News")
+    List<String> selectTitles();
 }

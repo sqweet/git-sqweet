@@ -5,6 +5,8 @@ import com.sweet.fatcat.model.News;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class NewsService {
     @Autowired
@@ -15,5 +17,9 @@ public class NewsService {
         if(null!=searchedNews)
             return searchedNews;
         return null;
+    }
+
+    public List<String> getAllNewsTitle(){
+        return newsMapper.selectTitles();
     }
 }

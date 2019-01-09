@@ -1,11 +1,17 @@
 $(document).ready(function() {
-    alert("hello");
+
     $.ajax({
         url:'news',
         type:'POST',
-        data:{id:2},
+
         success:function(data){
-            alert(data.content1);
+            $("#nTitle").text(data.title);
+            $("#content1").text(data.content1);
+            $("#newsPic1").css("background-image","url("+data.img1+")");
+            $("#newsPic2").css("background-image","url("+data.img2+")");
+            $("#newsPic3").css("background-image","url("+data.img3+")");
+            $("#content2").text(data.content2);
+            $("#content3").text(data.content3);
         },
         error:function (jqXHR) {
             alert("error！"+JSON.stringify(jqXHR));

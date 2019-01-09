@@ -17,6 +17,7 @@ $(document).ready(function () {
     $("#regiBtn").click(function () {
         $.ajax({
             url:'login/regist',
+
             type:'POST',
             data:{id:$("#id").val(),password:$("#password").val()},
             success:function(msg){
