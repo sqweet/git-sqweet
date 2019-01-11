@@ -12,6 +12,17 @@ $(document).ready(function() {
             $("#newsPic3").css("background-image","url("+data.img3+")");
             $("#content2").text(data.content2);
             $("#content3").text(data.content3);
+            // alert(data.comments);
+            var comments = "";
+            for(var i=0;i<data.comments.length;i++){
+                var user = "<p class='user'>"+data.comments[i].user+"</p>"
+                var time = "<p class='time'>"+data.comments[i].time+"</p>"
+                var content = "<p class='cmContent'>"+data.comments[i].content+"</p>"
+                comments = "<hr>"+comments+user+time+content+"<hr>";
+
+            }
+            $("#comment").html(comments);
+
         },
         error:function (jqXHR) {
             alert("error！"+JSON.stringify(jqXHR));
