@@ -49,12 +49,30 @@
     background: transparent;
 }
 #comment{
-    height: 500px;
+
+}
+.user{
+    font-family: 等线;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.time{
+    color: gray;
+    font-size: 10px;
+}
+#cmInput{
+    height: 35px;
+    border: solid 1px;
+}
+#cmButton{
+    float: left;
+    height: 35px;
 }
 img{
     height:40px;
     width:40px;
 }
-p{
-    color: green;
+h2{
+    font-family: 等线;
+    font-weight: lighter;
 }

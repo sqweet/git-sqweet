@@ -47,6 +47,13 @@ public class UserController {
         }
     }
 
+    @RequestMapping(value = "/logout")
+    public String logout(){
+        httpServletRequest.getSession().setAttribute("isLogin",false);
+        httpServletRequest.getSession().setAttribute("user",null);
+        return "home";
+    }
+
     @ResponseBody
     @RequestMapping(value = "login/regist",method = RequestMethod.POST)
     public String register(User user){

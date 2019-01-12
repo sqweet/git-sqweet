@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,7 +22,10 @@ public class NewsController {
     private NewsService newsService;
     @Autowired
     private CommentService commentService;
+    @Autowired
+    private HttpServletRequest httpServletRequest;
     private int newsId = 1;
+
 
     @RequestMapping(value = "/newsId",method = RequestMethod.POST)
     public String setNews(int receivedNewsId){
@@ -34,6 +38,7 @@ public class NewsController {
     @RequestMapping(value = "/news",method = RequestMethod.POST)
     public Map<String, Object> getNews(){
         List<Comment> comments = commentService.initNewsComments(newsId);
+        boolean isLogin = isLoginned();
         News news = newsService.getNewsById(newsId);
         Map<String,Object> map = new HashMap<String,Object>();
         map.put("title",news.getTitle());
@@ -44,6 +49,18 @@ public class NewsController {
         map.put("content3",news.getContent3());
         map.put("img3",news.getImg3());
         map.put("comments",comments);
+        map.put("newsId",newsId);
+        map.put("isLogin",isLogin);
         return map;
+    }
+
+    private boolean isLoginned(){
+        if(null==httpServletRequest.getSession().getAttribute("isLogin")){
+            return false;
+        }else if((boolean)httpServletRequest.getSession().getAttribute("isLogin")){
+            return true;
+        }else{
+            return false;
+        }
     }
 }

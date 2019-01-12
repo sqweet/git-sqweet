@@ -17,4 +17,8 @@ public class CommentService {
         List<Comment> comments = commentMapper.getCommentsByNewsId(newsId);
         return comments;
     }
+
+    public void addComment(Comment newComment){
+        commentMapper.addComment(newComment);
+    }
 }
