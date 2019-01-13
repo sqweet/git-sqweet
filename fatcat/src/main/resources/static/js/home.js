@@ -10,6 +10,21 @@ $(document).ready(function(){
     $("#title4").click(function () {id=4})
     $("#titleNewsTitle").click(function () {id=5+i;})
     $.ajax({
+        url:'/checkLog',
+        type:'POST',
+        success(data){
+            if(data){
+                $("#loginForm").html("<li><a href='/logout' id='logout'>注销</a></li>");
+            }
+        },
+        error:function (jqXHR) {
+            alert("error！"+JSON.stringify(jqXHR));
+            console.log(JSON.stringify(jqXHR));
+        }
+    })
+
+
+    $.ajax({
         url:'/getTitles',
         type:'POST',
         success:function(data){

@@ -40,7 +40,7 @@ public class UserController {
         if(validateUser!=null){
             httpServletRequest.getSession().setAttribute("isLogin",true);
             httpServletRequest.getSession().setAttribute("user",validateUser);
-            return "hello";
+            return "登录成功";
         }else {
             return "密码错误";
 
@@ -51,7 +51,7 @@ public class UserController {
     public String logout(){
         httpServletRequest.getSession().setAttribute("isLogin",false);
         httpServletRequest.getSession().setAttribute("user",null);
-        return "home";
+        return "Login";
     }
 
     @ResponseBody

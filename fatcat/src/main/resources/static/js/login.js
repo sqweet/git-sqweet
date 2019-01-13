@@ -6,6 +6,9 @@ $(document).ready(function () {
             data:{id:$("#id").val(),password:$("#password").val()},
             success:function(msg){
                 alert(msg);
+                if("登录成功"==msg){
+                    window.location.href = "/";
+                }
             },
             error:function (jqXHR) {
                 alert("error！"+JSON.stringify(jqXHR));

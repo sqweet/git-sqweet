@@ -1,5 +1,7 @@
 $(document).ready(function() {
     var newsId = 1;
+
+
     $.ajax({
         url:'news',
         type:'POST',
@@ -23,12 +25,13 @@ $(document).ready(function() {
 
             }
             $("#comment").html(comments);
-            var addCm = "请登录后评论";
-            if(data.isLogin){
-                addCm = "<input type=\"text\" id=\"cmInput\" class=\"col-md-4\" placeholder=\"发表一下看法吧\">\n" +
-                    "        <input type=\"button\" id=\"cmButton\" class=\"col-md-1\" value=\"发布\">";
+            if(!data.isLogin){
+                $("#write").html("请登录后评论");
+
+            }else if(data.isLogin){
+                $("#loginForm").html("<li><a href='/logout' id='logout'>注销</a></li>");
             }
-            $("#write").html(addCm);
+
         },
         error:function (jqXHR) {
             alert("error！"+JSON.stringify(jqXHR));
