@@ -19,6 +19,10 @@ public class NewsService {
         return null;
     }
 
+    public void upddateNews(News updateNews){
+        newsMapper.update(updateNews);
+    }
+
     public List<String> getAllNewsTitle(){
         return newsMapper.selectTitles();
     }

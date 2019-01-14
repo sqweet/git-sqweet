@@ -16,6 +16,10 @@ $(document).ready(function() {
             $("#content2").text(data.content2);
             $("#content3").text(data.content3);
 
+            if("admin"!=data.user){
+
+                $("#update").html("<p></p>");
+            }
             var comments = "<hr><h2>评论</h2><hr>";
             for(var i=0;i<data.comments.length;i++){
                 var user = "<p class='user'>"+data.comments[i].user+"</p>"
@@ -54,6 +58,16 @@ $(document).ready(function() {
             }
         })
     })
+
+    // $("#updateBtn").click(function () {
+    //     $.ajax({
+    //         url:'/update',
+    //         type:'POST',
+    //         data:{newsId:newsId},
+    //         success
+    //     })
+    //
+    // })
 })
 
 var status=false;

@@ -2,6 +2,7 @@ package com.sweet.fatcat.controller;
 
 import com.sweet.fatcat.model.Comment;
 import com.sweet.fatcat.model.News;
+import com.sweet.fatcat.model.User;
 import com.sweet.fatcat.service.CommentService;
 import com.sweet.fatcat.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,7 @@ public class NewsController {
     @ResponseBody
     @RequestMapping(value = "/news",method = RequestMethod.POST)
     public Map<String, Object> getNews(){
+        User u = (User)httpServletRequest.getSession().getAttribute("user");
         List<Comment> comments = commentService.initNewsComments(newsId);
         boolean isLogin = isLoginned();
         News news = newsService.getNewsById(newsId);
@@ -48,10 +50,28 @@ public class NewsController {
         map.put("img2",news.getImg2());
         map.put("content3",news.getContent3());
         map.put("img3",news.getImg3());
+        map.put("reporter",news.getReporter());
+        map.put("type",news.getType());
         map.put("comments",comments);
         map.put("newsId",newsId);
         map.put("isLogin",isLogin);
+        if(null==u){
+            map.put("user","null");
+        }else {
+            map.put("user", u.getId());
+        }
         return map;
+    }
+
+    @RequestMapping(value = "/update")
+    public String toUpdate(){
+      return "update";
+    }
+
+    @RequestMapping(value = "/updateNews",method = RequestMethod.POST)
+    public String Update(News news){
+        newsService.upddateNews(news);
+        return "news";
     }
 
     private boolean isLoginned(){

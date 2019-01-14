@@ -40,6 +40,10 @@ public class UserController {
         if(validateUser!=null){
             httpServletRequest.getSession().setAttribute("isLogin",true);
             httpServletRequest.getSession().setAttribute("user",validateUser);
+
+            if(validateUser.getId().equals("admin")){
+                return "管理员登录成功";
+            }
             return "登录成功";
         }else {
             return "密码错误";
